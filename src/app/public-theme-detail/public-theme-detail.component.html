@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="hero d-flex p-8">
+        <h1 class="align-self-center">{{theme.nom}}</h1>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="d-flex justify-content-between p-8">
+    <div class="d-inline-flex align-items-center">
+        <h3 class="">{{theme.description}}</h3>
+    </div>
+    <div class="d-inline-flex p-4 align-items-right">
+        <img [src]="getRandomImg()" class="object-fit-contain border rounded" width="400px">
+    </div>
+</div>
+
+<div class="row">
+    <div class="d-flex flex-column p-8 liste-formations">
+        <h1 class="p-4 align-self-center">Formations {{theme.nom}}</h1>
+        <table class="p-4 table table-borderless">
+            <tr *ngFor="let formation of theme.formations">
+                <td><b>{{formation.nom}}</b></td>
+                <td>{{formation.description}}</td>
+                <td>
+                    <i class="bi bi-clock-history"></i>{{formation.duree}} heures
+                </td>
+                <td><a [href]="'formations/'+theme.id+'-'+theme.nom+'/'+formation.id+'-'+formation.nom | replace : ' ' : '-'">
+                    <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">Voir programme de la formation</span>
+                </a></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+</div>
+

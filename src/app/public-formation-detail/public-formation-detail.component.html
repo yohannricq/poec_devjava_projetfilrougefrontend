@@ -1,0 +1,178 @@
+<div class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <div *ngIf="formation" class="row" style="padding-left: 100px;">
+        <div class="col s12 m8 ">
+            <br>
+            <h2 class="header center">{{ formation.nom }}</h2>
+            <div class="card horizontal hoverable cadre">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <table class="bordered striped">
+                            <tbody>
+                                <tr>
+                                    <td>Description</td>
+                                    <td><strong>{{ formation.description }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Détail</td>
+                                    <td><strong>{{ formation.detail }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Durée</td>
+                                    <td><strong>{{ formation.duree }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Lieu</td>
+                                    <td><strong>{{ formation.lieu }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Prix</td>
+                                    <td><strong>{{ formation.prixHt | number }}€</strong></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+
+        <br>
+        <h2 class="header center">Ressource</h2>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseFive">
+                        Pour Qui ?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <strong>Urbanistes des SI</strong>
+                        <ul>
+                            <li>urbanistes des SI.</li>
+                        </ul>
+                        <strong>Responsables d'Activités Métier</strong>
+                        <ul>
+                            <li>Responsables d'activités métier.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        Prerequis
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Developpeur Junior</strong>
+                        <ul>
+                            <li>Developpeur junior.</li>
+                        </ul>
+                        <strong>Connaissance de Base des SI</strong>
+                        <ul>
+                            <li>Connaissance de base des SI.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Point Fort
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Cours Interactifs</strong>
+                        <ul>
+                            <li>Cours interactifs avec des exercices pratiques.</li>
+                        </ul>
+                        <strong>Forums de Discussion</strong>
+                        <ul>
+                            <li>Participer à des discussions avec d'autres apprenants.</li>
+                        </ul>
+                        <strong>Environnements Virtuels</strong>
+                        <ul>
+                            <li>Utiliser des environnements virtuels pour expérimenter.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Local
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Vidéoprojecteur 1</strong>
+                        <ul>
+                            <li>Vidéoprojecteur pour afficher des présentations.</li>
+                        </ul>
+                        <strong>Salle de Réunion 1</strong>
+                        <ul>
+                            <li>Espace pour des réunions et des discussions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        Ressource Humaine
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Formateur SoftSkills</strong>
+                        <ul>
+                            <li>Formateur expérimenté dans le domaine informatique.</li>
+                        </ul>
+                        <strong>Formateur expert dans son langage</strong>
+                        <ul>
+                            <li>Formateur expérimenté dans le domaine informatique.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <hr>
+        <h2 class="header center">Session</h2>
+        <div class="container">
+            <div *ngFor="let session of formation.sessions" class="col m6 s6">
+                <div class="card" style="width: 18rem;">
+                    <img src=.\assets\img\3.jpg class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>{{ formation.nom }}</strong></h5>
+                        <p class="card-text">La session se déroule du {{ session.dateDebut | date:'dd/MM/yyyy' }} au
+                            {{ session.dateFin | date:'dd/MM/yyyy' }}</p>
+                        <a href="inscription" class="btn btn-primary">S'inscrire</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

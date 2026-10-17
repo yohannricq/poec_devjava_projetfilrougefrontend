@@ -1,0 +1,52 @@
+
+	
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        <hr class="hr" />
+            <h1>{{formationToShow.nom}}</h1>
+            <p>{{formationToShow.id}}</p>
+            <p>{{formationToShow.description}}</p>
+            <p>{{formationToShow.duree}}</p>
+            <p>{{formationToShow.lieu}}</p>
+            <p>{{formationToShow.prixHt}}</p>
+            <p>{{formationToShow.detail}}</p>
+        <hr class="hr" />
+         </div>
+        <div class="col-md-2"></div>
+    </div>
+
+	<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Durée
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let f of forms" class="col-md-4">
+                        <td> {{f.id}} </td>
+                        <td> {{f.nom}} </td>
+                        <td> {{f.description}} </td>
+                        <td> {{f.duree}} </td>
+                        <td> <a class="btn btn-primary" href="#" (click)="showDetail(f)">Show</a></td>
+                        <td> <a class="btn btn-primary" href="#" (click)="delete(f)">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+    <div class="col-md-2"></div>

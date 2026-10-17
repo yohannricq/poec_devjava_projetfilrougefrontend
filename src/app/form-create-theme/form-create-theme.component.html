@@ -1,0 +1,14 @@
+<div id="alert-container"></div>
+<form [formGroup]="monFormulaire" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom :</label>&nbsp;
+      <input type="text" id="nom" formControlName="nom" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description :</label>&nbsp;
+        <input type="text" id="description" formControlName="description" class="form-control">
+    </div>
+    <button type="submit" [disabled]="monFormulaire.invalid" class="btn btn-primary">Create</button>
+  </form>
+  <br/>
+  

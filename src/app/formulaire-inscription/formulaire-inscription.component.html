@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <br>
+        <h3>FORMULAIRE D'INSCRIPTION</h3>
+        <p><span class="obligatoire">*</span> Champs obligatoires</p>
+        <div class="form-group">
+            <label for="nom" value="1">Nom :<span class="obligatoire">*</span></label>
+            <input type="text" formControlName="nom" class="form-control" placeholder="Nom"
+                [ngClass]="{ 'is-invalid': submitted && f['nom'].errors }" />
+
+            <div *ngIf="submitted && f['nom'].errors" class="invalid-feedback">
+                <div *ngIf="f['nom'].errors['required']"> Nom est requis</div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="prenom">Prénom :<span class="obligatoire">*</span></label>
+            <input type="text" formControlName="prenom" class="form-control" placeholder="Prénom"
+                [ngClass]="{ 'is-invalid': submitted && f['prenom'].errors }" />
+            <div *ngIf="submitted && f['prenom'].errors" class="invalid-feedback">
+                <div *ngIf="f['prenom'].errors['required']">Prénom est requis</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="statut">Votre statut :<span class="obligatoire">*</span></label>
+            <select type="text" formControlName="statut" class="form-select" aria-label="Default select example"
+                [ngClass]="{ 'is-invalid': submitted && f['statut'].errors }">
+                <option selected>Vous êtes :</option>
+                <option value="1">Stagiaire</option>
+                <option value="2">Formateur</option>
+
+            </select>
+            <div *ngIf="submitted && f['statut'].errors" class="invalid-feedback">
+                <div *ngIf="f['statut'].errors['required']">Statut est requis</div>
+            </div>
+        </div>
+        <br>
+    </form>
+
+
+    <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Inscription</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    BRAVO. Votre inscription est bien prise en compte
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary but" data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-labelledby="exampleModalToggleLabel2" tabindex="-1"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Accueil</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Vous allez être redirigés vers la page Accueil
+                </div>
+                <div class="modal-footer">
+                    <a href=""><button class="btn btn-primary but" data-bs-target="#exampleModalToggle"
+                            data-bs-toggle="modal">GO</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary butt" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Souscrire</button>
+    <br>
+</div>
+<br>
